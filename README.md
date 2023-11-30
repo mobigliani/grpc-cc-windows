@@ -5,7 +5,6 @@ Build with Bazel:
 ```
 bazel build //helloworld:greeter_client --verbose_failures
 ```
-Build fails with:
-```
-helloworld/greeter_client.cc(31): fatal error C1083: Cannot open include file: 'helloworld.grpc.pb.h': No such file or directory
-```
+
+When building on Windows, compiler may complain about missing protobuf or other external headers. This usually indicates  paths too long for the MSVC compiler. To mitigate the issue one can set custom output directory to shorten the paths.
+It can be done either by adding `startup --output_user_root=C:/ur` to `c:\ProgramData\bazel.bazelrc` file, or `startup --output_base=C:/o` to `.bazelrc` in current workspace.
