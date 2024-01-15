@@ -7,7 +7,7 @@ bazel build //helloworld:greeter_client --verbose_failures
 ```
 
 When building on Windows, compiler may complain about missing protobuf or other external headers. This usually indicates  paths too long for MSVC compiler. To mitigate the issue one can set custom output directory to shorten the paths.
-It can be done either by adding `startup --output_user_root=C:/ur` to `c:\ProgramData\bazel.bazelrc` file, or `startup --output_base=C:/o` to `.bazelrc` in current workspace.
+It can be done either by adding `startup --output_user_root=C:/ur` to _c:\ProgramData\bazel.bazelrc_ file, or `startup --output_base=C:/o` to _.bazelrc_ in current workspace.
 
 Example PS command:
 ```PowerShell
